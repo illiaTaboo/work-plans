@@ -13,9 +13,9 @@ export const CoreLayout = ({ children }) => {
   return (
     <div className={styles.appContainer}>
       <CssBaseline />
-      <CoreRoutes />
       <Header />
       <main className={styles.mainContent}>
+        <CoreRoutes />
         {children}
       </main>
     </div>
