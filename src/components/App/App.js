@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import CoreLayout from 'layouts/CoreLayout';
 
 class App extends Component {
   render () {
     return (
-      <div>
-        <CoreLayout />
-      </div>
+      <Fragment>
+        <BrowserRouter>
+          <CoreLayout />
+        </BrowserRouter>
+      </Fragment>
     );
   }
 }

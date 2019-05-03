@@ -1,3 +1,11 @@
-.peshka {
-  font-size: 60px;
+.app-container {
+  height: 100%;
+  position: relative;
+  padding-top: 64px;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
