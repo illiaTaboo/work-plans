@@ -7,6 +7,7 @@ export const HOME_URL = '/';
 export const TABLE_URL = '/table';
 export const ABOUT_URL = '/about';
 export const LOGIN_URL = '/login';
+export const UNSPECIFIED_URL = '*';
 
 export const LOGO_URL = '/img/logo.png';
 
