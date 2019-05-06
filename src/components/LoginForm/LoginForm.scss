@@ -1,0 +1,22 @@
+.paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+}
+
+.avatar {
+  margin-top: 20px;
+}
+
+.error {
+  
+}
+
+.form {
+  margin: 30px 30px;
+
+  &__submit-btn {
+    margin-top: 20px !important;
+  }
+}
