@@ -17,25 +17,23 @@ import firebase from 'api/firebase';
 import { HOME_URL } from 'consts';
 import styles from './LoginForm.scss';
 
-const INITIAL_STATE = {
-  email: '',
-  password: '',
-  error: null
-};
-
 class LoginForm extends Component {
   static propTypes = {
     history: PropTypes.any
   };
 
-  state = { ...INITIAL_STATE }
+  state = {
+    email: '',
+    password: '',
+    error: null
+  };
 
   onSubmit = e => {
     const { email, password } = this.state;
 
     firebase.login(email, password)
       .then(() => {
-        this.setState({ ...INITIAL_STATE });
+        this.setState(this.state);
         this.props.history.replace(HOME_URL);
       })
       .catch(error => {
@@ -45,9 +43,8 @@ class LoginForm extends Component {
     e.preventDefault();
   };
 
-  onChange = e => {
+  onInputChange = e =>
     this.setState({ [e.target.name]: e.target.value });
-  };
 
   render () {
     const { email, password, error } = this.state;
@@ -65,11 +62,10 @@ class LoginForm extends Component {
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='email'>Email Address</InputLabel>
             <Input
-              id='email'
               name='email'
-              autoComplete='off'
-              autoFocus value={email}
-              onChange={this.onChange}
+              value={email}
+              onChange={this.onInputChange}
+              autoFocus
             />
           </FormControl>
           <FormControl margin='normal' required fullWidth>
@@ -77,14 +73,13 @@ class LoginForm extends Component {
             <Input
               name='password'
               type='password'
-              id='password'
               autoComplete='off'
               value={password}
-              onChange={this.onChange}
+              onChange={this.onInputChange}
             />
           </FormControl>
           {error &&
-            <FormHelperText className={styles.error} error>{error.message}</FormHelperText>
+            <FormHelperText error>{error.message}</FormHelperText>
           }
           <Button
             type='submit'
