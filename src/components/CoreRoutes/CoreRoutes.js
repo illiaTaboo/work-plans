@@ -5,7 +5,8 @@ import {
   Switch
 } from 'react-router-dom';
 
-import { TOP_LEVEL_ROUTES, HOME_URL, UNSPECIFIED_URL } from 'consts';
+import MajorDetailsView from 'routes/Major/MajorDetails';
+import { TOP_LEVEL_ROUTES, HOME_URL, UNSPECIFIED_URL, MAJOR_DETAILS_URL } from 'consts';
 
 const CoreRoutes = () => {
   const routesList = TOP_LEVEL_ROUTES
@@ -21,6 +22,7 @@ const CoreRoutes = () => {
   return (
     <Switch>
       {routesList}
+      <Route path={MAJOR_DETAILS_URL} component={MajorDetailsView} />
       <Redirect from={UNSPECIFIED_URL} to={HOME_URL} />
     </Switch>
   );

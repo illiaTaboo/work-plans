@@ -1,10 +1,11 @@
 import HomeView from 'routes/Home';
-import TableView from 'routes/Table';
+import MajorView from 'routes/Major';
 import AboutView from 'routes/About';
 import LoginView from 'routes/Login';
 
 export const HOME_URL = '/';
-export const TABLE_URL = '/table';
+export const MAJOR_URL = '/major';
+export const MAJOR_DETAILS_URL = `${MAJOR_URL}/:id`;
 export const ABOUT_URL = '/about';
 export const LOGIN_URL = '/login';
 export const UNSPECIFIED_URL = '*';
@@ -19,9 +20,10 @@ export const TOP_LEVEL_ROUTES = [
     exact: true
   },
   {
-    name: 'Table',
-    path: TABLE_URL,
-    component: TableView
+    name: 'Major',
+    path: MAJOR_URL,
+    component: MajorView,
+    exact: true
   },
   {
     name: 'About',

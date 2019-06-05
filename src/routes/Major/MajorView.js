@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class TableView extends Component {
+class MajorView extends Component {
   render () {
     return (
       <div>
-        <h1>Table</h1>
+        <h1>Major</h1>
       </div>
     );
   }
 }
 
-export default TableView;
+export default MajorView;

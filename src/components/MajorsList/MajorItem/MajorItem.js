@@ -6,12 +6,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 import styles from './MajorItem.scss';
-import { TABLE_URL } from 'consts';
+import { MAJOR_URL } from 'consts';
 
 const MajorItem = ({ name, id }) => {
   return (
     <div className={styles.majorItem}>
-      <ListItem button component={Link} to={`${TABLE_URL}/${id.toString()}`}>
+      <ListItem button component={Link} to={`${MAJOR_URL}/${id.toString()}`}>
         <ListItemText primary={name} />
       </ListItem>
       <Divider />
