@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import firebase from 'api/firebase';
+import MajorDetailsTable from 'components/MajorDetailsTable';
+
 const MajorDetailsView = ({ match: { params: { id } } }) => {
+  const disciplines = firebase.disciplines();
+
   return (
-    <div>
-      <h1>MajorDetailsView {id}</h1>
-    </div>
+    <MajorDetailsTable disciplines={disciplines}>
+      авп
+    </MajorDetailsTable>
   );
 };
 
