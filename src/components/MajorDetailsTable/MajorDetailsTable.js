@@ -60,7 +60,12 @@ const MajorDetailsTable = ({ disciplines }) => {
                 <TableCell align='center' padding='checkbox'>{row.indepWork}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.formControl.exam}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.formControl.test}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.formControl.courseProj}</TableCell>
+                <TableCell
+                  align='center'
+                  padding='checkbox'
+                >
+                  {row.formControl.courseProj}
+                </TableCell>
               </TableRow>
             ))}
 

@@ -10,7 +10,7 @@ class HomeView extends Component {
 
     return (
       <Fragment>
-        <Typography variant='h2' align='center'>
+        <Typography variant='h2' align='center' gutterBottom>
           TNEU Majors:
         </Typography>
         <FacultiesList faculties={faculties} />
