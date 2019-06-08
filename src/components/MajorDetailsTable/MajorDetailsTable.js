@@ -63,7 +63,6 @@ const MajorDetailsTable = ({ disciplines }) => {
                 </TableCell>
               </TableRow>
             ))}
-
             {emptyRows > 0 && (
               <TableRow style={{ height: 48 * emptyRows }}>
                 <TableCell colSpan={6} />
