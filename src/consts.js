@@ -1,5 +1,4 @@
 import HomeView from 'routes/Home';
-import MajorView from 'routes/Major';
 import AboutView from 'routes/About';
 import LoginView from 'routes/Login';
 
@@ -20,21 +19,16 @@ export const TOP_LEVEL_ROUTES = [
     exact: true
   },
   {
-    name: 'Major',
-    path: MAJOR_URL,
-    component: MajorView,
-    exact: true
-  },
-  {
     name: 'About',
     path: ABOUT_URL,
     component: AboutView
-  },
-  {
-    name: 'Login',
-    path: LOGIN_URL,
-    component: LoginView,
-    color: 'primary',
-    variant: 'outlined'
   }
 ];
+
+export const LOGIN_ROUTE = {
+  name: 'Login',
+  path: LOGIN_URL,
+  component: LoginView,
+  color: 'primary',
+  variant: 'outlined'
+};

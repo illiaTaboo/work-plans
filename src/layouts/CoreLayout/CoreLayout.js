@@ -21,7 +21,7 @@ export const CoreLayout = ({ children }) => {
 
   return (
     <div className={styles.appContainer}>
-      {firebaseInitialized ?
+      {/* {firebaseInitialized ? */}
         <Fragment>
           <CssBaseline />
           <Header />
@@ -30,11 +30,11 @@ export const CoreLayout = ({ children }) => {
             {children}
           </main>
         </Fragment>
-        :
+        {/* :
         <div className={styles.loader}>
           <CircularProgress />
         </div>
-      }
+      } */}
     </div>
   );
 };

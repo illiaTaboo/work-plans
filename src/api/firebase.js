@@ -285,7 +285,10 @@ class Firebase {
 
   logout = () => this.auth.signOut();
 
-  getCurrentUsername = () =>
+  userSession = (action, email, password) =>
+    this.auth[`${action}WithEmailAndPassword`](email, password);
+
+  getCurrentUser = () =>
     this.auth.currentUser;
 
   user = uid => this.db.ref(`users/${uid}`);
