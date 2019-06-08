@@ -51,15 +51,15 @@ const MajorDetailsTable = ({ disciplines }) => {
                 </TableCell>
                 <TableCell align='center' padding='checkbox'>{row.hours}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.credits}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.teacherLess.lect}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.teacherLess.pract}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.teacherLess.labs}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.teacherLess.indivWork}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.lect}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.pract}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.labs}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.indivWork}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.indepWork}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.formControl.exam}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.formControl.test}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.exam}</TableCell>
+                <TableCell align='center' padding='checkbox'>{row.test}</TableCell>
                 <TableCell align='center' padding='checkbox'>
-                  {row.formControl.courseProj}
+                  {row.courseProj}
                 </TableCell>
               </TableRow>
             ))}
