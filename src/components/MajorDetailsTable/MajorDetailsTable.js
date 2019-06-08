@@ -33,12 +33,11 @@ const MajorDetailsTable = ({ disciplines }) => {
               <TableCell padding='checkbox'>Discipline</TableCell>
               <TableCell align='center' padding='checkbox'>Hours</TableCell>
               <TableCell align='center' padding='checkbox'>Credits</TableCell>
-              <TableCell align='center' padding='checkbox'>Total</TableCell>
               <TableCell align='center' padding='checkbox'>Lect</TableCell>
               <TableCell align='center' padding='checkbox'>Pract</TableCell>
               <TableCell align='center' padding='checkbox'>Labs</TableCell>
-              <TableCell align='center' padding='checkbox'>Indiv. Work</TableCell>
-              <TableCell align='center' padding='checkbox'>Indep. Work</TableCell>
+              <TableCell align='center' padding='checkbox'>Indiv.<br />Work</TableCell>
+              <TableCell align='center' padding='checkbox'>Indep.<br />Work</TableCell>
               <TableCell align='center' padding='checkbox'>Exam</TableCell>
               <TableCell align='center' padding='checkbox'>Test</TableCell>
               <TableCell align='center' padding='checkbox'>Course proj</TableCell>
@@ -52,7 +51,6 @@ const MajorDetailsTable = ({ disciplines }) => {
                 </TableCell>
                 <TableCell align='center' padding='checkbox'>{row.hours}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.credits}</TableCell>
-                <TableCell align='center' padding='checkbox'>{row.teacherLess.total}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.teacherLess.lect}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.teacherLess.pract}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.teacherLess.labs}</TableCell>
@@ -60,10 +58,7 @@ const MajorDetailsTable = ({ disciplines }) => {
                 <TableCell align='center' padding='checkbox'>{row.indepWork}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.formControl.exam}</TableCell>
                 <TableCell align='center' padding='checkbox'>{row.formControl.test}</TableCell>
-                <TableCell
-                  align='center'
-                  padding='checkbox'
-                >
+                <TableCell align='center' padding='checkbox'>
                   {row.formControl.courseProj}
                 </TableCell>
               </TableRow>

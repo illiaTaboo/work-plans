@@ -8,9 +8,7 @@ const MajorDetailsView = ({ match: { params: { id } } }) => {
   const disciplines = firebase.disciplines();
 
   return (
-    <MajorDetailsTable disciplines={disciplines}>
-      авп
-    </MajorDetailsTable>
+    <MajorDetailsTable disciplines={disciplines} />
   );
 };
 
