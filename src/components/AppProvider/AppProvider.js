@@ -5,12 +5,14 @@ import firebase from 'api/firebase';
 class AppProvider extends Component {
   state = {
     currentUser: AppProvider.defaultProps.currentUser,
+    currentUserEmail: AppProvider.defaultProps.currentUserEmail,
     message: AppProvider.defaultProps.message
   }
 
   componentDidMount () {
     firebase.auth.onAuthStateChanged(user => user && this.setState({
-      currentUser: user
+      currentUser: user,
+      currentUserEmail: user.email
     }));
   }
 
@@ -19,7 +21,8 @@ class AppProvider extends Component {
       <Provider value={{
         state: this.state,
         destroySession: () => this.setState({
-          currentUser: AppProvider.defaultProps.currentUser
+          currentUser: AppProvider.defaultProps.currentUser,
+          currentUserEmail: AppProvider.defaultProps.currentUserEmail
         }),
         setMessage: message => this.setState({ message }),
         clearMessage: () => this.setState({
@@ -35,6 +38,7 @@ class AppProvider extends Component {
 
 AppProvider.defaultProps = {
   currentUser: null,
+  currentUserEmail: null,
   message: null
 };
 

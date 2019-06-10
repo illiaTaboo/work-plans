@@ -16,6 +16,7 @@ const config = {
 const disciplines = [
   {
     'id': 1,
+    'code': '5-1',
     'name': 'Databases Design',
     'hours': 180,
     'credits': 6,
@@ -27,14 +28,23 @@ const disciplines = [
     'indepWork': 72,
     'exam': 1,
     'test': 1,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4,
+    'ukrName': 'Проектування Баз Данних',
+    'lang': 'Ukrainian',
+    'lector': 'Spilchuk V. M.',
+    'teacher': 'Spilchuk V. M.',
+    'objective': 'To give students general knowledge in the field of database systems.To present methodology of data modeling and database designing.To describe query processing in the relational data model',
+    'outcome': 'To describe the architecture of the database management system. To design a logical structure of the database according to user requirements. To write queries by means of algebraic operators and SQL. To identify dependencies between the attributes and to design relations in respective normal forms. To analyze algorithms of concurrent transaction executions. To describe main systems of file organization',
+    'materials': 'Elmasri R., Navathe S.: Fundamentals of Database Systems. (7th edition) Pearson, 2015. Ullman J., Widom J.: A First Course in Database Systems. (3th edition) Pearson, 2014. Garcia-Molina H., Ullman J., Widom J.: Database systems: The complete book. (2th edition)',
+    'workload': 50
   },
   {
     'id': 2,
+    'code': '5-2',
     'name': 'Computer Architecture',
     'hours': 150,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -43,14 +53,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 3
   },
   {
     'id': 3,
+    'code': '5-3',
     'name': 'Foreign Language',
     'hours': 90,
     'credits': 3,
-
     'total': 41,
     'lect': 0,
     'pract': 30,
@@ -59,14 +70,15 @@ const disciplines = [
     'indepWork': 49,
     'exam': 4,
     'test': 0,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   },
   {
     'id': 4,
+    'code': '5-4',
     'name': 'Computer Discreet Mathematics',
     'hours': 120,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -75,14 +87,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   },
   {
     'id': 5,
+    'code': '5-5',
     'name': 'Object-Oriented Programming',
     'hours': 360,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -91,14 +104,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 2
   },
   {
     'id': 6,
+    'code': '5-6',
     'name': 'Software Modeling and Analysis',
     'hours': 90,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -107,14 +121,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 2
   },
   {
     'id': 7,
+    'code': '5-7',
     'name': 'Operating Systems',
     'hours': 180,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -123,14 +138,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 3
   },
   {
     'id': 8,
+    'code': '5-8',
     'name': 'Computer Networks Organizing',
     'hours': 180,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -139,14 +155,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 6
   },
   {
     'id': 9,
+    'code': '5-9',
     'name': 'Intelligent Robotic Systems',
     'hours': 150,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -155,14 +172,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   },
   {
     'id': 10,
+    'code': '5-10',
     'name': 'System Analysis and Design',
     'hours': 90,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -171,14 +189,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   },
   {
     'id': 11,
+    'code': '5-11',
     'name': 'Software Economics',
     'hours': 120,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -187,14 +206,15 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   },
   {
     'id': 12,
+    'code': '5-12',
     'name': 'Introduction to Software Engineering',
     'hours': 180,
     'credits': 5,
-
     'total': 64,
     'lect': 30,
     'pract': 0,
@@ -203,7 +223,8 @@ const disciplines = [
     'indepWork': 86,
     'exam': 0,
     'test': 3,
-    'courseProj': 0
+    'courseProj': 0,
+    'semester': 4
   }
 ];
 

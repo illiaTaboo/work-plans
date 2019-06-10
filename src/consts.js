@@ -5,6 +5,8 @@ import LoginView from 'routes/Login';
 export const HOME_URL = '/';
 export const MAJOR_URL = '/major';
 export const MAJOR_DETAILS_URL = `${MAJOR_URL}/:id`;
+export const DISCIPLINE_URL = '/discipline';
+export const DISCIPLINE_DETAILS_URL = `${DISCIPLINE_URL}/:id`;
 export const ABOUT_URL = '/about';
 export const LOGIN_URL = '/login';
 export const UNSPECIFIED_URL = '*';

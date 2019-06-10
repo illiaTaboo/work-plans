@@ -9,13 +9,21 @@ import { Consumer } from 'components/AppProvider/AppProvider';
 const MajorDetailsView = ({ match: { params: { id } } }) => {
   const disciplines = firebase.disciplines();
 
+  const getTableComponent = state => {
+    switch (state.currentUserEmail) {
+      case 'admin@tneu.edu.ua':
+        return <MajorDetailsEdit disciplines={disciplines} />;
+      case 'teacher@tneu.edu.ua':
+        return <MajorDetailsTable disciplines={disciplines} />;
+      default:
+        return <MajorDetailsTable disciplines={disciplines} />;
+    }
+  };
+
   return (
     <Consumer>
       {({ state, ...context }) => (
-        state.currentUser ?
-          <MajorDetailsEdit disciplines={disciplines} />
-          :
-          <MajorDetailsTable disciplines={disciplines} />
+        getTableComponent(state)
       )}
     </Consumer>
   );

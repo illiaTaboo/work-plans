@@ -28,7 +28,7 @@ const Header = ({ history }) => {
   const handleLogout = context => {
     firebase.logout();
     context.destroySession();
-    history.push('/signedOut');
+    history.push('/');
   };
 
   return (

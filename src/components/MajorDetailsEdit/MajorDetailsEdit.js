@@ -20,7 +20,8 @@ const MajorDetailsEdit = ({ disciplines }) => {
       { title: 'Indep. Work', field: 'indepWork', type: 'numeric' },
       { title: 'Exam', field: 'exam', type: 'numeric' },
       { title: 'Test', field: 'test', type: 'numeric' },
-      { title: 'Course proj', field: 'courseProj', type: 'numeric' }
+      { title: 'Course proj', field: 'courseProj', type: 'numeric' },
+      { title: 'Semester', field: 'semester', type: 'numeric' }
     ]
   });
 
@@ -30,6 +31,9 @@ const MajorDetailsEdit = ({ disciplines }) => {
         title='Editable disciplines table'
         columns={state.columns}
         data={state.data}
+        options={{
+          exportButton: true
+        }}
         editable={{
           onRowAdd: newData =>
             new Promise(resolve => {
