@@ -8,15 +8,16 @@ import { Consumer } from 'components/AppProvider/AppProvider';
 
 const MajorDetailsView = ({ match: { params: { id } } }) => {
   const disciplines = firebase.disciplines();
+  const faculties = firebase.faculties();
 
   const getTableComponent = state => {
     switch (state.currentUserEmail) {
       case 'admin@tneu.edu.ua':
-        return <MajorDetailsEdit disciplines={disciplines} />;
+        return <MajorDetailsEdit disciplines={disciplines} faculties={faculties} id={id} />;
       case 'teacher@tneu.edu.ua':
-        return <MajorDetailsTable disciplines={disciplines} />;
+        return <MajorDetailsTable disciplines={disciplines} faculties={faculties} id={id} />;
       default:
-        return <MajorDetailsTable disciplines={disciplines} />;
+        return <MajorDetailsTable disciplines={disciplines} faculties={faculties} id={id} />;
     }
   };
 

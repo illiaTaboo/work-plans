@@ -1,34 +1,46 @@
+/* eslint-disable max-len */
+/* eslint-disable object-property-newline */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import MaterialTable from 'material-table';
+import { Link } from 'react-router-dom';
 
+import { DISCIPLINE_URL } from 'consts';
 import styles from './MajorDetailsEdit.scss';
 
-const MajorDetailsEdit = ({ disciplines }) => {
+const MajorDetailsEdit = ({ disciplines, faculties, id }) => {
   const [state, setState] = useState({
     text: 'text',
     selecteds: 0,
     data: disciplines,
     columns: [
-      { title: 'Discipline', field: 'name' },
-      { title: 'Hours', field: 'hours', type: 'numeric' },
-      { title: 'Credits', field: 'credits', type: 'numeric' },
-      { title: 'Lect', field: 'lect', type: 'numeric' },
-      { title: 'Pract', field: 'pract', type: 'numeric' },
-      { title: 'Labs', field: 'labs', type: 'numeric' },
-      { title: 'Indiv. Work', field: 'indivWork', type: 'numeric' },
-      { title: 'Indep. Work', field: 'indepWork', type: 'numeric' },
-      { title: 'Exam', field: 'exam', type: 'numeric' },
-      { title: 'Test', field: 'test', type: 'numeric' },
-      { title: 'Course proj', field: 'courseProj', type: 'numeric' },
-      { title: 'Semester', field: 'semester', type: 'numeric' }
+      { title: 'Code', field: 'code', cellStyle: { padding: '0 0 0 20px' }, headerStyle: { padding: '0 0 0 20px' }
+      },
+      { title: 'Discipline', field: 'name', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' },
+        render: rowData =>
+          <Link to={`${DISCIPLINE_URL}/${rowData.id.toString()}`}>{rowData.name}</Link>
+      },
+      { title: 'Hours', field: 'hours', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Credits', field: 'credits', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Lect', field: 'lect', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Pract', field: 'pract', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Labs', field: 'labs', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Indiv. Work', field: 'indivWork', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Indep. Work', field: 'indepWork', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Exam', field: 'exam', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Test', field: 'test', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Course proj', field: 'courseProj', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Semester', field: 'semester', type: 'numeric', cellStyle: { padding: '0 20px 0 0' }, headerStyle: { padding: '0 20px 0 0' } }
     ]
   });
+
+  const curentMajor = faculties[0].majors[id - 1];
+  const tableTitle = curentMajor.name;
 
   return (
     <div className={styles.detailsEditWrapper}>
       <MaterialTable
-        title='Editable disciplines table'
+        title={tableTitle}
         columns={state.columns}
         data={state.data}
         options={{
@@ -69,7 +81,9 @@ const MajorDetailsEdit = ({ disciplines }) => {
 };
 
 MajorDetailsEdit.propTypes = {
-  disciplines: PropTypes.array
+  disciplines: PropTypes.array,
+  faculties: PropTypes.array,
+  id: PropTypes.string
 };
 
 export default MajorDetailsEdit;

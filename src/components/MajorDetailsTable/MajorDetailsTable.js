@@ -1,101 +1,60 @@
+/* eslint-disable max-len */
+/* eslint-disable object-property-newline */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Table from '@material-ui/core/Table';
-import Paper from '@material-ui/core/Paper';
-import TableHead from '@material-ui/core/TableHead';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
+import MaterialTable from 'material-table';
 
 import { DISCIPLINE_URL } from 'consts';
 import styles from './MajorDetailsTable.scss';
 
-const MajorDetailsTable = ({ disciplines }) => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+const MajorDetailsTable = ({ disciplines, faculties, id }) => {
+  const [state] = useState({
+    text: 'text',
+    selecteds: 0,
+    data: disciplines,
+    columns: [
+      { title: 'Code', field: 'code', cellStyle: { padding: '0 0 0 20px' }, headerStyle: { padding: '0 0 0 20px' }
+      },
+      { title: 'Discipline', field: 'name', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' },
+        render: rowData =>
+          <Link to={`${DISCIPLINE_URL}/${rowData.id.toString()}`}>{rowData.name}</Link>
+      },
+      { title: 'Hours', field: 'hours', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Credits', field: 'credits', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Lect', field: 'lect', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Pract', field: 'pract', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Labs', field: 'labs', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Indiv. Work', field: 'indivWork', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Indep. Work', field: 'indepWork', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Exam', field: 'exam', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Test', field: 'test', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Course proj', field: 'courseProj', type: 'numeric', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' } },
+      { title: 'Semester', field: 'semester', type: 'numeric', cellStyle: { padding: '0 20px 0 0' }, headerStyle: { padding: '0 20px 0 0' } }
+    ]
+  });
 
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, disciplines.length - page * rowsPerPage);
-
-  const handleChangePage = newPage =>
-    setPage(newPage);
-
-  const handleChangeRowsPerPage = e => {
-    setRowsPerPage(parseInt(e.target.value, 10));
-  };
+  const curentMajor = faculties[0].majors[id - 1];
+  const tableTitle = curentMajor.name;
 
   return (
-    <div className={styles.detailsTableWrapper}>
-      <Paper className={styles.root}>
-        <div className={styles.tableWrapper}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Code</TableCell>
-                <TableCell>Discipline</TableCell>
-                <TableCell align='center'>Hours</TableCell>
-                <TableCell align='center'>Credits</TableCell>
-                <TableCell align='center'>Lect</TableCell>
-                <TableCell align='center'>Pract</TableCell>
-                <TableCell align='center'>Labs</TableCell>
-                <TableCell align='center'>Indiv.<br />Work</TableCell>
-                <TableCell align='center'>Indep.<br />Work</TableCell>
-                <TableCell align='center'>Exam</TableCell>
-                <TableCell align='center'>Test</TableCell>
-                <TableCell align='center'>Course proj</TableCell>
-                <TableCell align='center'>Semester</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {disciplines.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
-                <TableRow key={row.id}>
-                  <TableCell scope='row'>{row.code}</TableCell>
-                  <TableCell>
-                    <Link to={`${DISCIPLINE_URL}/${row.id.toString()}`}>
-                      {row.name}
-                    </Link>
-                  </TableCell>
-                  <TableCell align='center'>{row.hours}</TableCell>
-                  <TableCell align='center'>{row.credits}</TableCell>
-                  <TableCell align='center'>{row.lect}</TableCell>
-                  <TableCell align='center'>{row.pract}</TableCell>
-                  <TableCell align='center'>{row.labs}</TableCell>
-                  <TableCell align='center'>{row.indivWork}</TableCell>
-                  <TableCell align='center'>{row.indepWork}</TableCell>
-                  <TableCell align='center'>{row.exam}</TableCell>
-                  <TableCell align='center'>{row.test}</TableCell>
-                  <TableCell align='center'>{row.courseProj}</TableCell>
-                  <TableCell align='center'>{row.semester}</TableCell>
-                </TableRow>
-              ))}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 49 * emptyRows }}>
-                  <TableCell colSpan={13} />
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 20]}
-          count={disciplines.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          SelectProps={{
-            inputProps: { 'aria-label': 'Rows per page' },
-            native: true
-          }}
-          onChangePage={(e, newPage) => handleChangePage(newPage)}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-        />
-      </Paper>
+    <div className={styles.detailsEditWrapper}>
+      <MaterialTable
+        title={tableTitle}
+        columns={state.columns}
+        data={state.data}
+        options={{
+          exportButton: true
+        }}
+      />
     </div>
   );
 };
 
 MajorDetailsTable.propTypes = {
-  disciplines: PropTypes.array
+  disciplines: PropTypes.array,
+  faculties: PropTypes.array,
+  id: PropTypes.string
 };
 
 export default MajorDetailsTable;

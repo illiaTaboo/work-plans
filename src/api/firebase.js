@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -16,6 +17,7 @@ const config = {
 const disciplines = [
   {
     'id': 1,
+    'majorId': 1,
     'code': '5-1',
     'name': 'Databases Design',
     'hours': 180,
@@ -41,6 +43,7 @@ const disciplines = [
   },
   {
     'id': 2,
+    'majorId': 1,
     'code': '5-2',
     'name': 'Computer Architecture',
     'hours': 150,
@@ -58,6 +61,7 @@ const disciplines = [
   },
   {
     'id': 3,
+    'majorId': 1,
     'code': '5-3',
     'name': 'Foreign Language',
     'hours': 90,
@@ -75,6 +79,7 @@ const disciplines = [
   },
   {
     'id': 4,
+    'majorId': 1,
     'code': '5-4',
     'name': 'Computer Discreet Mathematics',
     'hours': 120,
@@ -92,6 +97,7 @@ const disciplines = [
   },
   {
     'id': 5,
+    'majorId': 1,
     'code': '5-5',
     'name': 'Object-Oriented Programming',
     'hours': 360,
@@ -109,6 +115,7 @@ const disciplines = [
   },
   {
     'id': 6,
+    'majorId': 1,
     'code': '5-6',
     'name': 'Software Modeling and Analysis',
     'hours': 90,
@@ -126,6 +133,7 @@ const disciplines = [
   },
   {
     'id': 7,
+    'majorId': 1,
     'code': '5-7',
     'name': 'Operating Systems',
     'hours': 180,
@@ -143,6 +151,7 @@ const disciplines = [
   },
   {
     'id': 8,
+    'majorId': 1,
     'code': '5-8',
     'name': 'Computer Networks Organizing',
     'hours': 180,
@@ -160,6 +169,7 @@ const disciplines = [
   },
   {
     'id': 9,
+    'majorId': 1,
     'code': '5-9',
     'name': 'Intelligent Robotic Systems',
     'hours': 150,
@@ -177,6 +187,7 @@ const disciplines = [
   },
   {
     'id': 10,
+    'majorId': 1,
     'code': '5-10',
     'name': 'System Analysis and Design',
     'hours': 90,
@@ -194,6 +205,7 @@ const disciplines = [
   },
   {
     'id': 11,
+    'majorId': 1,
     'code': '5-11',
     'name': 'Software Economics',
     'hours': 120,
@@ -211,6 +223,7 @@ const disciplines = [
   },
   {
     'id': 12,
+    'majorId': 1,
     'code': '5-12',
     'name': 'Introduction to Software Engineering',
     'hours': 180,
