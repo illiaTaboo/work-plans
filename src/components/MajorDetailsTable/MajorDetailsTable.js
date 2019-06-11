@@ -16,7 +16,7 @@ const MajorDetailsTable = ({ disciplines, faculties, id }) => {
     columns: [
       { title: 'Code', field: 'code', cellStyle: { padding: '0 0 0 20px' }, headerStyle: { padding: '0 0 0 20px' }
       },
-      { title: 'Discipline', field: 'name', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' },
+      { title: 'Course', field: 'name', cellStyle: { padding: '0 5px' }, headerStyle: { padding: '0 5px' },
         render: rowData =>
           <Link to={`${DISCIPLINE_URL}/${rowData.id.toString()}`}>{rowData.name}</Link>
       },

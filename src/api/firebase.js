@@ -248,28 +248,70 @@ const faculties = [
     'majors': [
       {
         'id': 1,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'Computer Science'
       },
       {
         'id': 2,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'Computer Engineering'
       },
       {
         'id': 3,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'Software Engineering'
       },
       {
         'id': 4,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'Economic Cybernetics'
       },
       {
         'id': 5,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'System Analysis'
       },
       {
         'id': 6,
+        'firstCycle': true,
+        'fullTime': true,
         'name': 'Cyber Security'
       }
+      // {
+      //   'id': 7,
+      //   'firstCycle': false,
+      //   'fullTime': true,
+      //   'name': 'Software Engineering'
+      // },
+      // {
+      //   'id': 8,
+      //   'firstCycle': true,
+      //   'fullTime': false,
+      //   'name': 'Software Engineering'
+      // },
+      // {
+      //   'id': 9,
+      //   'firstCycle': false,
+      //   'fullTime': true,
+      //   'name': 'Computer Science'
+      // },
+      // {
+      //   'id': 10,
+      //   'firstCycle': true,
+      //   'fullTime': false,
+      //   'name': 'Computer Science'
+      // },
+      // {
+      //   'id': 11,
+      //   'firstCycle': false,
+      //   'fullTime': false,
+      //   'name': 'Software Engineering'
+      // }
     ]
   },
   {
