@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Divider from '@material-ui/core/Divider';
 
-import MajorItem from './MajorItem';
+import { MAJOR_URL } from 'consts';
+import styles from './MajorsList.scss';
 
-const MajorsList = ({ majors }) => {
-  const majorsList = majors.map(
-    major => (
-      <MajorItem
-        key={major.id}
-        name={major.name}
-        id={major.id}
-      />
-    )
-  );
-
+const MajorsList = ({ time }) => {
+  const majorItemsList = time.majors.map(major => (
+    <ListItem key={major.id} button component={Link} to={`${MAJOR_URL}/${major.id.toString()}`}>
+      <ListItemText primary={major.name} />
+    </ListItem>
+  ));
   return (
-    <List component='div' disablePadding>
-      {majorsList}
-    </List>
+    <Fragment>
+      <List
+        className={styles.timeList}
+        aria-labelledby='nested-list-subheader'
+        subheader={
+          <ListSubheader id='nested-list-subheader'>
+            {time.name}
+          </ListSubheader>
+        }
+      >
+        {majorItemsList}
+      </List>
+      <Divider />
+    </Fragment>
   );
 };
 
 MajorsList.propTypes = {
-  majors: PropTypes.array
+  time: PropTypes.object
 };
 
 export default MajorsList;
