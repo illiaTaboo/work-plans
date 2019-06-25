@@ -1,7 +1,9 @@
 // TODO: add styles, refac
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { MAJOR_URL } from 'consts';
 import styles from './TreeView.scss';
 
 class TreeView extends Component {
@@ -43,9 +45,13 @@ class TreeView extends Component {
     return list.map(item =>
       (
         <div key={item.name} style={{ paddingLeft: '20px' }}>
-          <div onClick={() => this.handleItemExpand(item)}>
-            {item.name}{item.child && ' >'}
-          </div>
+          {item.child ?
+            <div onClick={() => this.handleItemExpand(item)}>
+              {item.name} >
+            </div>
+            :
+            <Link to={`${MAJOR_URL}/${item.id.toString()}`}>{item.name}</Link>
+          }
           {
             openItems.some(openItem => openItem.name === item.name)
               && item.child
