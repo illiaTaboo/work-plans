@@ -15,6 +15,14 @@ export const UNSPECIFIED_URL = '*';
 
 export const LOGO_URL = '/img/logo.png';
 
+export const LOGIN_ROUTE = {
+  name: 'Login',
+  path: LOGIN_URL,
+  component: LoginView,
+  color: 'primary',
+  variant: 'outlined'
+};
+
 export const TOP_LEVEL_ROUTES = [
   {
     name: 'Home',
@@ -52,11 +60,3 @@ export const CORE_ROUTES = [
     component: DiscipineDetailsView
   }
 ];
-
-export const LOGIN_ROUTE = {
-  name: 'Login',
-  path: LOGIN_URL,
-  component: LoginView,
-  color: 'primary',
-  variant: 'outlined'
-};

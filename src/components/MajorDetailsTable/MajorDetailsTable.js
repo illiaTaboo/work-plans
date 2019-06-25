@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 import MaterialTable from 'material-table';
 
 import { DISCIPLINE_URL } from 'consts';
+import { Consumer } from 'components/AppProvider/AppProvider';
 import styles from './MajorDetailsTable.scss';
 
 const MajorDetailsTable = ({ disciplines, faculties, id }) => {
-  const [state] = useState({
+  const [table] = useState({
     text: 'text',
     selecteds: 0,
     data: disciplines,
@@ -38,16 +39,20 @@ const MajorDetailsTable = ({ disciplines, faculties, id }) => {
   const tableTitle = curentMajor.name;
 
   return (
-    <div className={styles.detailsEditWrapper}>
-      <MaterialTable
-        title={tableTitle}
-        columns={state.columns}
-        data={state.data}
-        options={{
-          exportButton: true
-        }}
-      />
-    </div>
+    <Consumer>
+      {({ state, ...context }) => (
+        <div className={styles.detailsEditWrapper}>
+          <MaterialTable
+            title={tableTitle}
+            columns={table.columns}
+            data={table.data}
+            options={{
+              exportButton: true
+            }}
+          />
+        </div>
+      )}
+    </Consumer>
   );
 };
 
