@@ -1,7 +1,10 @@
-// TODO: add styles, refac
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import { MAJOR_URL } from 'consts';
 import styles from './TreeView.scss';
@@ -42,15 +45,34 @@ class TreeView extends Component {
     const { list } = this.props;
     const { openItems } = this.state;
 
-    return list.map(item =>
-      (
-        <div key={item.name} style={{ paddingLeft: '20px' }}>
+    return list.map(item => {
+      const foundItem = this.state.openItems.find(i => i.name === item.name);
+      return (
+        <div key={item.name} className={styles.list}>
           {item.child ?
-            <div onClick={() => this.handleItemExpand(item)}>
-              {item.name} >
-            </div>
+            <ListItem button onClick={() => this.handleItemExpand(item)}>
+              <ListItemText primary={item.name} />
+              {
+                foundItem && foundItem.isOpen ?
+                  <ExpandLess className={styles.listItemExpandIcon} />
+                  :
+                  <ExpandLess className={[
+                    styles.listItemExpandIconRotate,
+                    styles.listItemExpandIcon
+                  ]}
+                  />
+              }
+            </ListItem>
             :
-            <Link to={`${MAJOR_URL}/${item.id.toString()}`}>{item.name}</Link>
+            <Fragment>
+              <ListItem button
+                component={Link}
+                to={`${MAJOR_URL}/${item.id.toString()}`}
+              >
+                <ListItemText primary={item.name} />
+              </ListItem >
+              <Divider />
+            </Fragment>
           }
           {
             openItems.some(openItem => openItem.name === item.name)
@@ -58,7 +80,8 @@ class TreeView extends Component {
               && <TreeView list={item.child} />
           }
         </div>
-      )
+      );
+    }
     );
   }
 }
