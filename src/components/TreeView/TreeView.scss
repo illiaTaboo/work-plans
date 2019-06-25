@@ -4,9 +4,7 @@
   &__item {
     &__expand-icon {
       transition: all .2s ease-in-out !important;
-      margin-left: auto;
-      vertical-align: middle;
-    
+
       &--rotate {
         transform: rotate(180deg);
       }
