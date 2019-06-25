@@ -1,6 +1,8 @@
 import HomeView from 'routes/Home';
 import AboutView from 'routes/About';
 import LoginView from 'routes/Login';
+import MajorDetailsView from 'routes/MajorDetails';
+import DiscipineDetailsView from 'routes/DiscipineDetails';
 
 export const HOME_URL = '/';
 export const MAJOR_URL = '/major';
@@ -24,6 +26,30 @@ export const TOP_LEVEL_ROUTES = [
     name: 'About',
     path: ABOUT_URL,
     component: AboutView
+  }
+];
+
+export const CORE_ROUTES = [
+  {
+    path: HOME_URL,
+    component: HomeView,
+    exact: true
+  },
+  {
+    path: ABOUT_URL,
+    component: AboutView
+  },
+  {
+    path: LOGIN_URL,
+    component: LoginView
+  },
+  {
+    path: MAJOR_DETAILS_URL,
+    component: MajorDetailsView
+  },
+  {
+    path: DISCIPLINE_DETAILS_URL,
+    component: DiscipineDetailsView
   }
 ];
 

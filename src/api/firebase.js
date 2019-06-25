@@ -243,100 +243,170 @@ const disciplines = [
 
 const faculties = [
   {
-    'id': 1,
     'name': 'Faculty of Computer Information Technology',
-    'majors': [
+    'child': [
       {
-        'id': 1,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'Computer Science'
+        'name': 'First Cycle',
+        'child': [
+          {
+            'name': 'Full Time',
+            'child': [
+              {
+                'id': 1,
+                'name': 'Computer Science'
+              },
+              {
+                'id': 2,
+                'name': 'Computer Engineering'
+              },
+              {
+                'id': 3,
+                'name': 'Software Engineering'
+              },
+              {
+                'id': 4,
+                'name': 'Economic Cybernetics'
+              },
+              {
+                'id': 5,
+                'name': 'System Analysis'
+              },
+              {
+                'id': 6,
+                'name': 'Cyber Security'
+              }
+            ]
+          },
+          {
+            'name': 'Part Time',
+            'child': [
+              {
+                'id': 7,
+                'name': 'Computer Science'
+              },
+              {
+                'id': 8,
+                'name': 'Computer Engineering'
+              },
+              {
+                'id': 9,
+                'name': 'Software Engineering'
+              },
+              {
+                'id': 12,
+                'name': 'Cyber Security'
+              }
+            ]
+          }
+        ]
       },
       {
-        'id': 2,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'Computer Engineering'
-      },
-      {
-        'id': 3,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'Software Engineering'
-      },
-      {
-        'id': 4,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'Economic Cybernetics'
-      },
-      {
-        'id': 5,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'System Analysis'
-      },
-      {
-        'id': 6,
-        'firstCycle': true,
-        'fullTime': true,
-        'name': 'Cyber Security'
+        'name': 'Second Cycle',
+        'child': [
+          {
+            'name': 'Full Time',
+            'child': [
+              {
+                'id': 13,
+                'name': 'Computer Science'
+              },
+              {
+                'id': 14,
+                'name': 'Computer Engineering'
+              },
+              {
+                'id': 15,
+                'name': 'Software Engineering'
+              },
+              {
+                'id': 16,
+                'name': 'Economic Cybernetics'
+              },
+              {
+                'id': 17,
+                'name': 'System Analysis'
+              },
+              {
+                'id': 18,
+                'name': 'Cyber Security'
+              }
+            ]
+          },
+          {
+            'name': 'Part Time',
+            'child': [
+              {
+                'id': 19,
+                'name': 'Computer Science'
+              },
+              {
+                'id': 20,
+                'name': 'Computer Engineering'
+              },
+              {
+                'id': 21,
+                'name': 'Software Engineering'
+              },
+              {
+                'id': 22,
+                'name': 'Cyber Security'
+              }
+            ]
+          }
+        ]
       }
-      // {
-      //   'id': 7,
-      //   'firstCycle': false,
-      //   'fullTime': true,
-      //   'name': 'Software Engineering'
-      // },
-      // {
-      //   'id': 8,
-      //   'firstCycle': true,
-      //   'fullTime': false,
-      //   'name': 'Software Engineering'
-      // },
-      // {
-      //   'id': 9,
-      //   'firstCycle': false,
-      //   'fullTime': true,
-      //   'name': 'Computer Science'
-      // },
-      // {
-      //   'id': 10,
-      //   'firstCycle': true,
-      //   'fullTime': false,
-      //   'name': 'Computer Science'
-      // },
-      // {
-      //   'id': 11,
-      //   'firstCycle': false,
-      //   'fullTime': false,
-      //   'name': 'Software Engineering'
-      // }
     ]
   },
   {
-    'id': 2,
     'name': 'Faculty of Economics and Management',
-    'majors': [
+    'child': [
       {
-        'id': 7,
-        'name': 'Managment'
+        'name': 'First Cycle',
+        'child': [
+          {
+            'name': 'Full Time',
+            'child': [
+              {
+                'id': 23,
+                'name': 'Managment'
+              },
+              {
+                'id': 24,
+                'name': 'Marketing'
+              },
+              {
+                'id': 25,
+                'name': 'Economics and Management'
+              },
+              {
+                'id': 26,
+                'name': 'Public Management'
+              },
+              {
+                'id': 27,
+                'name': 'Entrepreneurship, Trade and Stock-taking activity'
+              }
+            ]
+          }
+        ]
       },
       {
-        'id': 8,
-        'name': 'Marketing'
-      },
-      {
-        'id': 9,
-        'name': 'Economics and Management'
-      },
-      {
-        'id': 10,
-        'name': 'Public Management'
-      },
-      {
-        'id': 11,
-        'name': 'Entrepreneurship, Trade and Stock-taking activity'
+        'name': 'Second Cycle',
+        'child': [
+          {
+            'name': 'Full Time',
+            'child': [
+              {
+                'id': 28,
+                'name': 'Economics and Management'
+              },
+              {
+                'id': 29,
+                'name': 'Public Management'
+              }
+            ]
+          }
+        ]
       }
     ]
   }

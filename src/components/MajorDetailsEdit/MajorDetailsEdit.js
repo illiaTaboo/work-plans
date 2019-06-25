@@ -34,7 +34,7 @@ const MajorDetailsEdit = ({ disciplines, faculties, id }) => {
     ]
   });
 
-  const curentMajor = faculties[0].majors[id - 1];
+  const curentMajor = 1; // TODO add major id logic
   const tableTitle = curentMajor.name;
 
   return (
